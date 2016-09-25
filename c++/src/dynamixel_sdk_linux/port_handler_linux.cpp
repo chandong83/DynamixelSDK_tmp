@@ -80,6 +80,7 @@ GPIOExport(int pin)
    bytes_written = snprintf(buffer, BUFFER_MAX, "%d", pin);
    write(fd, buffer, bytes_written);
    close(fd);
+   usleep(50000); //wait until create the node.
    return(0);
 }
 
